@@ -1,0 +1,30 @@
+# 山海·开铺 (KaiPu) · 组合 patch 层（根）
+# =====================================================================
+# 本仓是一个 **monorepo**：三个可独立安装的 DSH 插件包。
+#
+#   packages/plugin-platform     场地插件（核心）    @shanhai/kaipu-platform
+#   packages/plugin-wisdom       智囊团插件（可选）  @shanhai/kaipu-wisdom-team
+#   packages/plugin-workstation  工位插件（操作台）  @shanhai/kaipu-workstation
+#
+# ★ 安装请指向**具体子包**，不是本文件所在层。
+#   每个子包自带 cordis.patch.yml 与 package.json 的 dsh.bundle 声明，
+#   单独装、单独卸，互不绑死。
+#
+# ★ 本根 patch 只做一件事：把「场地插件」装进来 —— 它是另外两个包的
+#   使用前提（工位/智囊团的数据都来自场地的网关端点）。它**不**声明
+#   wisdom / workstation，避免把它们变成强制依赖，也避免本仓变成
+#   一个「只指向别的包、自己没有行为」的空壳聚合包。
+# =====================================================================
+
+- insert:
+    - id: shanhai-kaipu-platform
+      name: '@shanhai/kaipu-platform'
+      config:
+        scenesCatalog: true
+        runView: true
+        capabilityBoundary: true
+        roleSeats: true
+        # 内置生产地址（开箱即用）。想接自己的部署，在 profile 覆盖层改 baseUrl。
+        baseUrl: 'https://agent.ak2029.com/kai-pu'
+        accountId: ''
+        clientVersion: '0.3.0'

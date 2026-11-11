@@ -2,10 +2,16 @@
 node_modules/
 .pnpm-store/
 dist/
-lib/
 # ★ 契约层的 **CJS 产物**（给 client bundle 内联用；ESM 那份在 lib/）
 lib-cjs/
 *.tsbuildinfo
+
+# ★★ 例外：packages/*/lib/ **必须入库**
+#   理由：市场规则要求「仓库里有真实可安装的代码」，DSH 安装读的就是这一层。
+#   这也是我们发给每个客户的同一份产物 —— 公不公开不构成增量暴露。
+#   真正的钥匙（服务端判据 / 规则库 / 内部质检脚本）不在本仓，见 README「本仓不包含什么」。
+!packages/*/lib/
+!packages/*/lib/**
 
 # 壳（后置）的 Rust 产物
 apps/shell/src-tauri/target/

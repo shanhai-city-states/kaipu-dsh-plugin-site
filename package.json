@@ -1,15 +1,35 @@
 {
   "name": "@shanhai/kaipu-workspace",
-  "version": "0.2.114",
-  "private": true,
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
-  "description": "山海·开铺 — DeepSeek Harness 工位插件。给 AI Agent 开一家公司：设位子、派任务、留痕迹。",
+  "description": "山海·开铺 (KaiPu) — DeepSeek Harness 场地插件：给 AI Agent 设位子、按六阶段派任务、把谁做了什么与谁批过全程留痕。",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "kaipu",
+    "workflow",
+    "agent",
+    "audit"
+  ],
+  "homepage": "https://github.com/shanhai-city-states/kaipu-dsh-plugin-site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanhai-city-states/kaipu-dsh-plugin-site.git"
+  },
   "engines": {
     "node": ">=22"
   },
-  "devDependencies": {
-    "typescript": "^5.6.3",
-    "@types/react": "^18.3.31"
+  "workspaces": [
+    "packages/plugin-platform",
+    "packages/plugin-wisdom",
+    "packages/plugin-workstation"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   }
 }
