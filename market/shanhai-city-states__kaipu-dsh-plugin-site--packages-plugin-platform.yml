@@ -1,7 +1,7 @@
-url: https://github.com/shanhai-city-states/kaipu-dsh-plugin-release
-name: shanhai-city-states/kaipu-dsh-plugin-release#plugin-platform
+url: https://github.com/shanhai-city-states/kaipu-dsh-plugin-site
+name: shanhai-city-states/kaipu-dsh-plugin-site#plugin-platform
 category: workflow
 description:
   en: "The Kaipu site plugin: set up seats for AI agents, assign tasks across six project phases, and keep a verifiable record of who did what and who approved it. Works standalone; the wisdom-team plugin is optional."
   zh: "山海·开铺 场地插件：给 AI Agent 设位子、按六阶段派任务、把谁做了什么与谁批过全程留痕。可单独使用，智囊团插件为可选。"
-tarball: https://github.com/shanhai-city-states/kaipu-dsh-plugin-release/releases/latest/download/kaipu-platform.tgz
+tarball: https://github.com/shanhai-city-states/kaipu-dsh-plugin-site/releases/latest/download/kaipu-platform.tgz
